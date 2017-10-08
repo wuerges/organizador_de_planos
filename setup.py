@@ -12,6 +12,7 @@ setup(
     description='Organizador de Planos de ensino da UFFS.',
     long_description=open('README.md').read(),
     install_requires=[
-        "odfpy >= 1.3.0",
+        "ezodf >= 0.3.0",
+        "lxml >= 4.0.0",
     ],
 )
