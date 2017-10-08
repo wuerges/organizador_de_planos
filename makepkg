@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+import os
+import sys
+
+for modname in sys.argv[1:]:
+    dirname = modname.replace('.', os.path.sep)
+    if not os.path.exists(dirname):
+        os.makedirs(dirname)
+    parts = modname.split('.')
+    for i in range(len(parts)):
+        path = os.path.sep.join(parts[: i + 1])
+        init_path = os.path.join(path, '__init__.py')
+        if not os.path.exists(init_path):
+            file(init_path, 'w').close()
